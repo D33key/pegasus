@@ -1,0 +1,38 @@
+.nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    grid-area: nav;
+}
+
+.header,
+.profile,
+.list {
+    padding: 24px 25px;
+}
+
+.header,
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style-type: none;
+}
+
+.profile {
+    margin-top: auto;
+    background-color: #f5f7f9;
+}
+
+.logo{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
