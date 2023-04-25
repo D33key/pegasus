@@ -1,5 +1,7 @@
+import { useState } from "react";
+
 import SvgTemplate from "@/templates/SvgTemplate";
-import React from "react";
+
 import Energy from "./assets/Energy";
 import Logo from "./assets/Logo";
 import Notify from "./assets/Notify";
@@ -9,8 +11,10 @@ import Transport from "./assets/Transport";
 import Water from "./assets/Water";
 
 import cl from "./Navigation.module.css";
+import { ListOfItem } from '@/types';
+import InnerMenu from './InnerMenu/InnerMenu';
 
-const listOfNavigation = [
+const listOfNavigation: ListOfItem[] = [
     {
         id: 0,
         title: "Транспорт",
@@ -33,7 +37,39 @@ const listOfNavigation = [
     },
 ];
 
+const listOfSettings: ListOfItem[] = [
+    {
+        id: 0,
+        title: "Общее",
+        svg: Logo,
+    },
+    {
+        id: 1,
+        title: "Безопасность",
+        svg: Logo,
+    },
+    {
+        id: 2,
+        title: "Приватность",
+        svg: Logo,
+    },
+    {
+        id: 3,
+        title: "Уведомления",
+        svg: Logo,
+    },
+    {
+        id: 4,
+        title: "Управление доступом",
+        svg: Logo,
+    },
+];
+
 const Navigation = () => {
+    const [isOpened, setIsOpened] = useState(false);
+    function handleClick() {
+        setIsOpened((prev) => !prev);
+    }
     return (
         <nav className={cl.nav}>
             <header className={cl.header}>
@@ -42,9 +78,16 @@ const Navigation = () => {
                 </div>
                 <div className={cl.accountInfo}>
                     <SvgTemplate svg={Notify} key="Notification" />
-                    <SvgTemplate svg={Settings} key="Settings" />
+                    <SvgTemplate
+                        handleClick={handleClick}
+                        svg={Settings}
+                        key="Settings"
+                    />
                 </div>
             </header>
+            <div className={`${cl.settings} ${isOpened ? `${cl.active}` : ""}`}>
+                <InnerMenu title="Профиль" list={listOfSettings} />
+            </div>
             <ul className={cl.list}>
                 {listOfNavigation.map((name) => (
                     <li className={cl.item} key={name.id}>

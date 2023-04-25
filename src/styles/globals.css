@@ -1,4 +1,6 @@
-
+body{
+    color: #4F5E72;
+}
 
 .grid {
     min-height: 100vh;
