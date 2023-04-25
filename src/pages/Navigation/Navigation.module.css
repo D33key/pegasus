@@ -3,6 +3,8 @@
     flex-direction: column;
     background-color: #ffffff;
     grid-area: nav;
+
+    overflow: hidden;
 }
 
 .header,
@@ -21,8 +23,23 @@
 .list {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0.5rem;
     list-style-type: none;
+}
+
+.item{
+    padding: 10px 0;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: .3s ease;
+}
+.item:hover{
+    transform: translateX(20px);
 }
 
 .profile {
@@ -36,3 +53,19 @@
     align-items: center;
     justify-content: center;
 }
+
+.logo span{
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.accountInfo{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.accountInfo > div{
+    cursor: pointer;
+}
+

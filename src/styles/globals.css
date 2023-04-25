@@ -3,7 +3,7 @@
 .grid {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 24% 2fr;
+    grid-template-columns: 20% 2fr;
     grid-template-areas: "nav content";
 }
 
