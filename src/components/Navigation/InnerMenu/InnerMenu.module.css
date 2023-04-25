@@ -1,21 +1,52 @@
-.wrapper{
+.wrapper {
     display: flex;
     flex-direction: column;
     padding-top: 20px;
     padding-left: 28px;
     padding-right: 7px;
+
+    overflow: hidden;
 }
 
-.title{
+.title {
     font-size: 1.25rem;
 }
 
-.list{
+.list {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 12px;
     margin-top: 18px;
 
-    font-size: .8rem;
-    font-weight: 500;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.list li {
+    position: relative;
+    padding: 5px 0;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.list li:hover {
+    color: #5855f0;
+}
+
+.list li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    display: block;
+    width: 3px;
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+    background-color: #5855f0;
+
+    transition: 0.1s ease;
+}
+
+.list li:hover::after {
+    right: -7px;
 }

@@ -13,6 +13,7 @@ import Water from "./assets/Water";
 import cl from "./Navigation.module.css";
 import { ListOfItem } from '@/types';
 import InnerMenu from './InnerMenu/InnerMenu';
+import Profile from '../Profile/Profile';
 
 const listOfNavigation: ListOfItem[] = [
     {
@@ -96,7 +97,7 @@ const Navigation = () => {
                     </li>
                 ))}
             </ul>
-            <div className={cl.profile}>Profile</div>
+            <Profile name='ivan ivanov' workplace='marketing'/>
         </nav>
     );
 };

@@ -1,0 +1,22 @@
+.profile {
+    padding: 18px 24px;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    margin-top: auto;
+    background-color: #f5f7f9;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.profile p:last-child{
+    font-size: 0.65rem;
+    font-weight: 400;
+}
+
+.profile p {
+    text-transform:capitalize;
+}
