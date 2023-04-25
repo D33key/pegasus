@@ -6,6 +6,7 @@
 
     position: relative;
     overflow: hidden;
+    filter: drop-shadow(4px 4px 46px rgba(118, 114, 135, 0.09));
 }
 
 .header,
@@ -37,11 +38,15 @@
     border-radius: 8px;
 
     cursor: pointer;
+}
+
+.item p {
     transition: 0.3s ease;
 }
-.item:hover {
+
+.item:hover p {
     color: #5855f0;
-    transform: translateX(20px);
+    transform: translateX(-14px);
 }
 
 .logo {

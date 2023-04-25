@@ -93,11 +93,11 @@ const Navigation = () => {
                 {listOfNavigation.map((name) => (
                     <li className={cl.item} key={name.id}>
                         <SvgTemplate key={name.id} svg={name.svg} />
-                        {name.title}
+                        <p>{name.title}</p>
                     </li>
                 ))}
             </ul>
-            <Profile name='ivan ivanov' workplace='marketing'/>
+            <Profile name="ivan ivanov" workplace="marketing" />
         </nav>
     );
 };
