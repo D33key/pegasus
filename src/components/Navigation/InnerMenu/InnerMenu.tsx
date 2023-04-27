@@ -14,7 +14,7 @@ const InnerMenu = ({ title, list }: InnerMenu) => {
             <ul className={cl.list}>
                 {list.map((item) => (
                     <div key={item.title} className={cl.itemWrapper}>
-                        <SvgTemplate key={item.id} svg={item.svg} cl={cl.svg}/>
+                        <SvgTemplate key={item.title} svg={item.svg} cl={cl.svg}/>
                         <li key={item.id}>{item.title}</li>
                     </div>
                 ))}
