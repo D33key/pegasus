@@ -5,7 +5,7 @@ body {
 .grid {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 20% 2fr;
+    grid-template-columns: 25% 2fr;
     grid-template-areas: "nav content";
 }
 
@@ -37,6 +37,12 @@ body {
 }
 
 .block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
     padding: 128px 80px;
     background: #ffffff;
     box-shadow: 0px 17px 37px rgba(135, 137, 157, 0.08);

@@ -18,13 +18,15 @@
     gap: 12px;
     margin-top: 18px;
 
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 600;
 }
 
 .list li {
+    width: 100%;
+
     position: relative;
-    padding: 5px 0;
+
     transition: 0.3s ease;
     cursor: pointer;
 }
@@ -49,4 +51,15 @@
 
 .list li:hover::after {
     right: -7px;
+}
+
+.itemWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.svg {
+    width: 16px;
 }
