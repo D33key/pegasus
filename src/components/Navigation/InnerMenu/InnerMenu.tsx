@@ -9,14 +9,16 @@ type InnerMenu = {
 };
 
 const InnerMenu = ({ title, list }: InnerMenu) => {
-    console.log(list)
     return (
         <div className={cl.wrapper}>
             <h3 className={cl.title}>{title}</h3>
             <ul className={cl.list}>
                 {list.map((item) => (
                     <li key={item.title}>
-                        <Link href='' className={cl.itemWrapper}>
+                        <Link
+                            href={`${item.link}`}
+                            className={cl.itemWrapper}
+                        >
                             <SvgTemplate
                                 key={item.title}
                                 svg={item.svg}

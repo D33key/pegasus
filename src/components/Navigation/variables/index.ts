@@ -152,21 +152,25 @@ export const listOfEnegry: ListOfItem[] = [
         id: 0,
         title: "Электрооборудование",
         svg: Summary,
+        link: PageName.ELECTRIC_EQUIPMENT,
     },
     {
         id: 1,
         title: "Электроосвещение",
         svg: Arrival,
+        link: PageName.ELECTRIC_LIGHTNING,
     },
     {
         id: 2,
         title: "Электроснабжение",
         svg: Statistics,
+        link: PageName.ELECTROSUPPLY,
     },
     {
         id: 3,
         title: "Наружное освещение",
         svg: Notify,
+        link: PageName.OUTDOOR_LIGHTNING,
     },
 ];
 
@@ -176,21 +180,25 @@ export const listOfWater: ListOfItem[] = [
         id: 0,
         title: "По видам",
         svg: Summary,
+        link: PageName.WATER_BY_TYPE,
     },
     {
         id: 1,
         title: "По охвату",
         svg: Arrival,
+        link: PageName.WATER_BY_COVERAGE,
     },
     {
         id: 2,
         title: "По природным источникам",
         svg: Statistics,
+        link: PageName.WATER_BY_NATURAL_SOURCES,
     },
     {
         id: 3,
         title: "По способам подачи",
         svg: Notify,
+        link: PageName.WATER_BY_SUBMISSION_METHODS,
     },
 ];
 

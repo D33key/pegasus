@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SvgTemplate from "@/templates/SvgTemplate";
 import Logo from "./assets/Logo";
 import Notify from "./assets/Notify";
@@ -21,7 +21,7 @@ import {
 } from "./variables";
 import { Category, Menu } from "@/types";
 import NavElement from "./NavElement/NavElement";
-import Link from 'next/link';
+import Link from "next/link";
 
 const Navigation = () => {
     const [isOpened, setIsOpened] = useState(false);
@@ -30,6 +30,11 @@ const Navigation = () => {
         menuItems: listOfSettings,
     });
     const [selectedCategory, setSelectedCategory] = useState<Menu | null>(null);
+
+    useEffect(() => {
+        const isOpenPrev = localStorage.getItem("menuIsOpen") === "true";
+        setIsOpened(isOpenPrev);
+    }, []);
 
     const handleCategorySelect = (category: Menu) => {
         switch (category) {
@@ -76,7 +81,11 @@ const Navigation = () => {
             handleCategorySelect(category);
             setSelectedCategory(category);
         } else {
-            setIsOpened((prev) => !prev);
+            setIsOpened((prev) => {
+                const newValue = !prev;
+                localStorage.setItem("menuIsOpen", newValue.toString());
+                return newValue;
+            });
             handleCategorySelect(category);
             setSelectedCategory(category);
         }
