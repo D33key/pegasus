@@ -1,5 +1,6 @@
 import SvgTemplate from "@/templates/SvgTemplate";
 import { ListOfItem } from "@/types";
+import Link from "next/link";
 import cl from "./InnerMenu.module.css";
 
 type InnerMenu = {
@@ -8,15 +9,22 @@ type InnerMenu = {
 };
 
 const InnerMenu = ({ title, list }: InnerMenu) => {
+    console.log(list)
     return (
         <div className={cl.wrapper}>
             <h3 className={cl.title}>{title}</h3>
             <ul className={cl.list}>
                 {list.map((item) => (
-                    <div key={item.title} className={cl.itemWrapper}>
-                        <SvgTemplate key={item.title} svg={item.svg} cl={cl.svg}/>
-                        <li key={item.id}>{item.title}</li>
-                    </div>
+                    <li key={item.title}>
+                        <Link href='' className={cl.itemWrapper}>
+                            <SvgTemplate
+                                key={item.title}
+                                svg={item.svg}
+                                cl={cl.svg}
+                            />
+                            <p key={item.id}>{item.title}</p>
+                        </Link>
+                    </li>
                 ))}
             </ul>
         </div>

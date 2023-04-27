@@ -1,14 +1,17 @@
-import { ListOfItem, Menu, MenuName } from '@/types';
+import { ListOfItem, Menu, MenuName, PageName } from "@/types";
 
 import Transport from "../assets/menuSVGs/Transport";
 import Water from "../assets/menuSVGs/Water";
 import People from "../assets/menuSVGs/People";
 import Energy from "../assets/menuSVGs/Energy";
-import Common from '../assets/settingsSVGs/Common';
-import Security from '../assets/settingsSVGs/Security';
-import Privaty from '../assets/settingsSVGs/Privaty';
-import Notify from '../assets/Notify';
-import Manage from '../assets/settingsSVGs/Manage';
+import Common from "../assets/settingsSVGs/Common";
+import Security from "../assets/settingsSVGs/Security";
+import Privaty from "../assets/settingsSVGs/Privaty";
+import Notify from "../assets/Notify";
+import Manage from "../assets/settingsSVGs/Manage";
+import Summary from "../assets/peopleSVGs/Summary";
+import Arrival from "../assets/peopleSVGs/Arrival";
+import Statistics from "../assets/peopleSVGs/Statistics";
 
 // Menus
 export const SETTINGS: Menu = MenuName.SETTINGS;
@@ -17,88 +20,179 @@ export const listOfSettings: ListOfItem[] = [
         id: 0,
         title: "Общее",
         svg: Common,
+        link: PageName.COMMON,
     },
     {
         id: 1,
         title: "Безопасность",
         svg: Security,
+        link: PageName.SECURITY,
     },
     {
         id: 2,
         title: "Приватность",
         svg: Privaty,
+        link: PageName.PRIVATY,
     },
     {
         id: 3,
         title: "Уведомления",
         svg: Notify,
+        link: PageName.NOTIFY,
     },
     {
         id: 4,
         title: "Управление доступом",
         svg: Manage,
+        link: PageName.MANAGE,
     },
 ];
 
 export const TRANSPORT: Menu = MenuName.TRANSPORT;
-
+export const listOfTransport: ListOfItem[] = [
+    {
+        id: 0,
+        title: "Автомобиль",
+        svg: Summary,
+        link: PageName.AUTO,
+    },
+    {
+        id: 1,
+        title: "Самолет",
+        svg: Arrival,
+        link: PageName.AIRPLANE,
+    },
+    {
+        id: 2,
+        title: "Поезд",
+        svg: Statistics,
+        link: PageName.TRAIN,
+    },
+    {
+        id: 3,
+        title: "Пароход",
+        svg: Notify,
+        link: PageName.STEAMBOAT,
+    },
+    {
+        id: 4,
+        title: "Мотоцикл",
+        svg: Manage,
+        link: PageName.MOTO,
+    },
+    {
+        id: 5,
+        title: "Самокат",
+        svg: Manage,
+        link: PageName.SCOOTER,
+    },
+];
 
 export const PEOPLE: Menu = MenuName.PEOPLE;
 export const listOfPeople: ListOfItem[] = [
     {
         id: 0,
         title: "Сводная информация",
-        svg: Common,
+        svg: Summary,
+        link: PageName.SUMMARY,
     },
     {
         id: 1,
         title: "Время пребывания",
-        svg: Security,
+        svg: Arrival,
+        link: PageName.ARRIVAL,
     },
     {
         id: 2,
         title: "Соц.-дем. хар-ки",
-        svg: Privaty,
+        svg: Statistics,
+        link: PageName.STATISTICS,
     },
     {
         id: 3,
         title: "Откуда приехали",
         svg: Notify,
+        link: PageName.WHERE,
     },
     {
         id: 4,
         title: "Цель посещения",
         svg: Manage,
+        link: PageName.GOAL,
     },
     {
         id: 5,
         title: "Траты",
         svg: Manage,
+        link: PageName.SPENDING,
     },
     {
         id: 6,
         title: "Сравнение территорий",
         svg: Manage,
+        link: PageName.COMPARISON_TERRITORY,
     },
     {
         id: 7,
         title: "Сравнение периодов",
         svg: Manage,
+        link: PageName.COMPARISON_TERRITORY,
     },
     {
         id: 8,
         title: "Тепловая карта",
         svg: Manage,
+        link: PageName.HEAT_MAP,
     },
 ];
 
 export const ENERGY: Menu = MenuName.ENERGY;
-
+export const listOfEnegry: ListOfItem[] = [
+    {
+        id: 0,
+        title: "Электрооборудование",
+        svg: Summary,
+    },
+    {
+        id: 1,
+        title: "Электроосвещение",
+        svg: Arrival,
+    },
+    {
+        id: 2,
+        title: "Электроснабжение",
+        svg: Statistics,
+    },
+    {
+        id: 3,
+        title: "Наружное освещение",
+        svg: Notify,
+    },
+];
 
 export const WATER: Menu = MenuName.WATER;
-
-
-
+export const listOfWater: ListOfItem[] = [
+    {
+        id: 0,
+        title: "По видам",
+        svg: Summary,
+    },
+    {
+        id: 1,
+        title: "По охвату",
+        svg: Arrival,
+    },
+    {
+        id: 2,
+        title: "По природным источникам",
+        svg: Statistics,
+    },
+    {
+        id: 3,
+        title: "По способам подачи",
+        svg: Notify,
+    },
+];
 
 export const listOfNavigation: ListOfItem[] = [
     {
@@ -126,5 +220,3 @@ export const listOfNavigation: ListOfItem[] = [
         category: MenuName.WATER,
     },
 ];
-
-

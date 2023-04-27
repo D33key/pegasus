@@ -8,9 +8,12 @@ import InnerMenu from "./InnerMenu/InnerMenu";
 import Profile from "../Profile/Profile";
 import {
     ENERGY,
+    listOfEnegry,
     listOfNavigation,
     listOfPeople,
     listOfSettings,
+    listOfTransport,
+    listOfWater,
     PEOPLE,
     SETTINGS,
     TRANSPORT,
@@ -23,8 +26,8 @@ import Link from 'next/link';
 const Navigation = () => {
     const [isOpened, setIsOpened] = useState(false);
     const [categoryState, setCategoryState] = useState<Category>({
-        category: "",
-        menuItems: [],
+        category: "Профиль",
+        menuItems: listOfSettings,
     });
     const [selectedCategory, setSelectedCategory] = useState<Menu | null>(null);
 
@@ -39,7 +42,7 @@ const Navigation = () => {
             case TRANSPORT:
                 setCategoryState({
                     category: "Транспорт",
-                    menuItems: listOfSettings,
+                    menuItems: listOfTransport,
                 });
                 break;
             case PEOPLE:
@@ -51,13 +54,13 @@ const Navigation = () => {
             case ENERGY:
                 setCategoryState({
                     category: "Электричество",
-                    menuItems: listOfSettings,
+                    menuItems: listOfEnegry,
                 });
                 break;
             case WATER:
                 setCategoryState({
                     category: "Вода",
-                    menuItems: listOfSettings,
+                    menuItems: listOfWater,
                 });
                 break;
             default:
