@@ -17,6 +17,8 @@ import {
     WATER,
 } from "./variables";
 import { Category, Menu } from "@/types";
+import NavElement from "./NavElement/NavElement";
+import Link from 'next/link';
 
 const Navigation = () => {
     const [isOpened, setIsOpened] = useState(false);
@@ -81,7 +83,10 @@ const Navigation = () => {
         <nav className={cl.nav}>
             <header className={cl.header}>
                 <div className={cl.logo}>
-                    <SvgTemplate key="Logo" svg={Logo} /> <span>pegasus</span>
+                    <Link href="/">
+                        <SvgTemplate key="Logo" svg={Logo} />{" "}
+                        <span>pegasus</span>
+                    </Link>
                 </div>
                 <div className={cl.accountInfo}>
                     <SvgTemplate svg={Notify} key="Notification" />
@@ -102,24 +107,15 @@ const Navigation = () => {
             </div>
             <ul className={cl.list}>
                 {listOfNavigation.map((name) => (
-                    <li
-                        className={cl.item}
-                        key={name.id}
-                        onClick={(
-                            e: React.MouseEvent<HTMLElement, MouseEvent>
-                        ) => {
-                            if (name.category)
-                                return handleClickOnMainNavigation(
-                                    e,
-                                    name.category
-                                );
-                            else
-                                throw new Error("Category should be included!");
-                        }}
-                    >
-                        <SvgTemplate key={name.id} svg={name.svg} />
-                        <p>{name.title}</p>
-                    </li>
+                    <NavElement
+                        isOpened={isOpened}
+                        handleClickOnMainNavigation={
+                            handleClickOnMainNavigation
+                        }
+                        name={name}
+                        selectedCategory={selectedCategory}
+                        key={name.title}
+                    />
                 ))}
             </ul>
             <Profile name="ivan ivanov" workplace="marketing" />

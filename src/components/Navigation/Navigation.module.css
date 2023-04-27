@@ -30,33 +30,16 @@
     gap: 1rem;
 }
 
-.item {
-    display: flex;
-    gap: 24px;
-    align-items: center;
 
-    border-radius: 8px;
 
-    cursor: pointer;
-}
-
-.item p {
-    transition: 0.3s ease;
-}
-
-.item:hover p {
-    color: #5855f0;
-    transform: translateX(-14px);
-}
-
-.logo {
+.logo a{
     display: flex;
     gap: 0.5rem;
     align-items: center;
     justify-content: center;
 }
 
-.logo span {
+.logo a span {
     font-size: 0.8rem;
     font-weight: bold;
 }

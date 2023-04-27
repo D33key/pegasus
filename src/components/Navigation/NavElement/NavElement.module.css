@@ -1,0 +1,30 @@
+.item {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.item p {
+    transition: 0.3s ease;
+}
+.item svg {
+    border: 1px solid transparent;
+    border-radius: 12px;
+    transition: .3s ease;
+}
+
+.item:hover p {
+    color: #5855f0;
+}
+
+.item:hover svg {
+    border-color: #5855f0;
+}
+
+.item.active svg {
+    border-color: #5855f0;
+}

@@ -1,14 +1,11 @@
-import { Inter } from 'next/font/google'
-import Navigation from '../components/Navigation/Navigation'
-import Welcome from './Welcome'
+import Layout from '@/components/Layout';
+import Welcome from "./welcome";
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  return (
-    <div className={`${inter.className} grid`}>
-      <Navigation/>
-      <Welcome />
-    </div>
-  )
+    return (
+        <Layout>
+            <Welcome />
+        </Layout>
+    );
 }
