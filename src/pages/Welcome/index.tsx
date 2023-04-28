@@ -4,10 +4,14 @@ import Document from './assets/Document';
 const Welcome = () => {
     return (
         <div className="page-wrapper">
-            <div className="top">Добро пожаловать</div>
+            <div className="top-content-page flex">
+                <p>Добро пожаловать</p>
+            </div>
             <div className="main">
-                <div className='block'>
-                    <div><SvgTemplate svg={Document}/></div>
+                <div className="block">
+                    <div>
+                        <SvgTemplate svg={Document} />
+                    </div>
                     <p>
                         Выберите категорию в левом меню, чтобы увидеть
                         подробности

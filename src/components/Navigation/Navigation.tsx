@@ -31,11 +31,6 @@ const Navigation = () => {
     });
     const [selectedCategory, setSelectedCategory] = useState<Menu | null>(null);
 
-    useEffect(() => {
-        const isOpenPrev = localStorage.getItem("menuIsOpen") === "true";
-        setIsOpened(isOpenPrev);
-    }, []);
-
     const handleCategorySelect = (category: Menu) => {
         switch (category) {
             case SETTINGS:
@@ -81,11 +76,7 @@ const Navigation = () => {
             handleCategorySelect(category);
             setSelectedCategory(category);
         } else {
-            setIsOpened((prev) => {
-                const newValue = !prev;
-                localStorage.setItem("menuIsOpen", newValue.toString());
-                return newValue;
-            });
+            setIsOpened((prev) => !prev);
             handleCategorySelect(category);
             setSelectedCategory(category);
         }
